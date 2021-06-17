@@ -1,0 +1,55 @@
+:root {
+    --row: 1;
+    --col: 1;
+}
+
+header {
+    text-align: center;
+    color: blue;
+    text-decoration: brown;
+    text-shadow: chocolate;
+    font-size: 20px;
+}
+
+body {
+    background-color: rgb(5, 214, 214);
+}
+
+.flex div {
+    display: inline;
+    margin: 4px;
+}
+
+.btn {
+    color: rgb(250, 2, 138);
+    background-color: rgba(224, 12, 12, 0.178);
+    border-radius: 50px;
+    font-size: medium;
+    padding: 15px 32px;
+    border: none;
+    transition-duration: 0.4s;
+}
+
+div :hover {
+    color: rgb(255, 255, 255);
+}
+
+div :hover {
+    color: rgb(255, 255, 255);
+}
+
+.screen {
+    display: grid;
+    width: 600px;
+    height: 600px;
+    border: 5px solid green;
+    margin: 20px auto;
+}
+
+.pixels {
+    border: rgba(92, 91, 91, 0.137) 1px solid;
+}
+
+.divs {
+    background-color: white;
+}
