@@ -30,14 +30,6 @@ body {
     transition-duration: 0.4s;
 }
 
-div :hover {
-    color: rgb(255, 255, 255);
-}
-
-div :hover {
-    color: rgb(255, 255, 255);
-}
-
 .screen {
     display: grid;
     width: 600px;
@@ -52,4 +44,23 @@ div :hover {
 
 .divs {
     background-color: white;
+}
+
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+}
+
+#container {
+    display: grid;
+    grid-gap: none;
+    grid-template-rows: repeat(var(--grid-rows), auto);
+    grid-template-columns: repeat(var(--grid-cols), auto);
+    background-color: white;
+}
+
+.grid-item {
+    padding: none;
+    border: 1px solid #ddd;
+    text-align: center;
 }

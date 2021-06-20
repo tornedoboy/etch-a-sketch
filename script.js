@@ -1,34 +1,38 @@
-function grid() {
-    const button = document.querySelectorAll('.btn');
+const container = document.getElementById("container");
+const button = document.querySelectorAll('.btn1');
 
-    const screen = document.querySelectorAll('.screen');
+const screen = document.querySelectorAll('.screen');
 
-    //let pixel = "";
-    let gridsize = 64;
-    let screensize = 6;
-    scr();
+// creating divs of rows and cols and setting black color for mouse when it comes over each div
 
-    function scr() {
+function makeRows(rows, cols) {
+    container.style.setProperty('--grid-rows', rows);
+    container.style.setProperty('--grid-cols', cols);
+    for (c = 0; c < (rows * cols); c++) {
+        let cell = document.createElement("div");
 
-        for (let i = 0; i < screensize ** 2; i++) {
-            console.log(screensize)
-            let div = document.createElement('div');
-            div.classList.add('divs');
-            document.getElementById("id1").style.backgroundColor = 'white';
+        container.appendChild(cell).className = "grid-item";
+        cell.addEventListener('mouseover', function(e) {
+            e.target.style.backgroundColor = 'black';
+        })
+    };
+};
 
-
-            document.getElementById("id1").appendChild(div);
-
-
-
-        }
-        document.getElementById("id1").style.gridTemplateColoumns = `repeat(${screensize}, auto)`;
-        document.getElementById("id1").style.gridTemplateRows = `repeat(${screensize}, auto)`;
+function clear() {
+    console.log('hello')
 
 
+    let cell = container.querySelectorAll('div');
+    cell.target.style.backgroundColor = 'white';
 
-    }
+
 
 
 
 }
+
+
+//clean.forEach('click' clean => clean.style.backgroundColor = 'white')
+
+
+makeRows(64, 64);
