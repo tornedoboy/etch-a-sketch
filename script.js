@@ -1,9 +1,13 @@
 const container = document.getElementById("container");
-const button = document.querySelectorAll('.btn1');
+const btn1 = document.querySelectorAll('.btn1');
+const btn2 = document.querySelectorAll('.btn2');
+const btn3 = document.querySelectorAll('.btn3');
 
 const screen = document.querySelectorAll('.screen');
+let rows = 16;
+let cols = 16;
 
-// creating divs of rows and cols and setting black color for mouse when it comes over each div
+// creating divs of rows and cols and setting default black color for mouse when it comes over each div
 
 function makeRows(rows, cols) {
     container.style.setProperty('--grid-rows', rows);
@@ -18,21 +22,67 @@ function makeRows(rows, cols) {
     };
 };
 
-function clear() {
-    console.log('hello')
-
-
-    let cell = container.querySelectorAll('div');
-    cell.target.style.backgroundColor = 'white';
 
 
 
+//clear the grid and start again
+
+btn1.forEach((clear) => {
+
+    clear.addEventListener('click', (e) => {
+        console.log('hello')
+
+        container.innerHTML = "";
+        makeRows(rows, cols);
+    });
 
 
-}
+
+});
+
+btn2.forEach((color) => {
+    color.addEventListener('click', (box) => {
+        box = document.querySelectorAll(".grid-item");
+        console.log('bye')
+        box.forEach((item) => {
+            item.addEventListener('mouseover', function(e) {
+                e.target.style.backgroundColor = 'red';
+            });
+
+        });
 
 
-//clean.forEach('click' clean => clean.style.backgroundColor = 'white')
 
 
-makeRows(64, 64);
+
+    });
+
+
+});
+
+btn3.forEach((color) => {
+    color.addEventListener('click', (box) => {
+        box = document.querySelectorAll(".grid-item");
+        console.log('erase')
+        box.forEach((item) => {
+            item.addEventListener('mouseover', function(e) {
+                e.target.style.backgroundColor = 'white';
+            });
+
+        });
+
+
+
+
+
+    });
+
+
+});
+
+
+
+
+
+
+makeRows(rows, cols);
