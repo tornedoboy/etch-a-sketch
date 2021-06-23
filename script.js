@@ -2,6 +2,7 @@ const container = document.getElementById("container");
 const btn1 = document.querySelectorAll('.btn1');
 const btn2 = document.querySelectorAll('.btn2');
 const btn3 = document.querySelectorAll('.btn3');
+const btn4 = document.querySelectorAll('.btn4');
 
 const screen = document.querySelectorAll('.screen');
 let rows = 16;
@@ -67,6 +68,26 @@ btn3.forEach((color) => {
         box.forEach((item) => {
             item.addEventListener('mouseover', function(e) {
                 e.target.style.backgroundColor = 'white';
+            });
+
+        });
+
+
+
+
+
+    });
+
+
+});
+
+btn4.forEach((color) => {
+    color.addEventListener('click', (box) => {
+        box = document.querySelectorAll(".grid-item");
+        console.log('erase')
+        box.forEach((item) => {
+            item.addEventListener('mouseover', function(e) {
+                e.target.style.backgroundColor = 'blue';
             });
 
         });
