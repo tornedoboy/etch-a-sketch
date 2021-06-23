@@ -17,7 +17,7 @@ function makeRows(rows, cols) {
 
         container.appendChild(cell).className = "grid-item";
         cell.addEventListener('mouseover', function(e) {
-            e.target.style.backgroundColor = 'black';
+            e.target.style.backgroundColor = 'blue';
         })
     };
 };
